@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+  xmlns:desktop6="http://schemas.microsoft.com/appx/manifest/desktop/windows10/6"
+  IgnorableNamespaces="uap">
+  <Identity
+    Name="5b783a5b-e224-4b08-93ce-b9f7b27d2b57"
+    Publisher="CN=Rafael"
+    Version="0.1.0.0" />
+  <Properties>
+    <DisplayName>Repro App</DisplayName>
+    <PublisherDisplayName>Rafael</PublisherDisplayName>
+    <Logo>StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
+    <PackageDependency Name="Microsoft.VCLibs.140.00" MinVersion="14.0.24123.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="app.exe" EntryPoint="$targetentrypoint$">
+      <uap:VisualElements DisplayName="Repro App" Description="Description"
+        Square150x150Logo="Square150x150Logo.png" Square44x44Logo="Square44x44Logo.png"
+        BackgroundColor="transparent">
+        <uap:SplashScreen Image="SplashScreen.png" uap5:Optional="true" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+    <rescap:Capability Name="broadFileSystemAccess" />
+    <rescap:Capability Name="allowElevation" />
+    <rescap:Capability Name="packageManagement" />
+
+    <uap:Capability Name="removableStorage" />
+    
+    <Capability Name="internetClient" />
+    <Capability Name="privateNetworkClientServer" />
+  </Capabilities>
+</Package>
